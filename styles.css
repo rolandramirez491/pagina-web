@@ -5,16 +5,15 @@
     left: 0;
     min-width: 100vw;
     min-height: 100vh;
-    z-index: -1; 
-    object-fit: cover; 
+    z-index: -1;
+    object-fit: cover;
 }
-
 
 body {
     background-color: silver;
     color: rgb(47, 214, 38);
+    font-family: Arial, sans-serif;
 }
-
 
 .title-animation {
     font-size: 2.5rem;
@@ -24,44 +23,132 @@ body {
     animation: fadeIn 3s ease-in-out infinite alternate;
 }
 
-.title-animation span {
-    color: #3498db;
-    font-weight: bold;
-    animation: bounce 1s ease-in-out infinite alternate;
+.input-container {
+    text-align: center;
+    margin-top: 50px;
 }
 
+input {
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid #3498db;
+}
 
+/* Botones flotantes para las operaciones */
+.floating-btn {
+    position: absolute;
+    font-size: 20px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, background-color 1s;
+    animation: moveAround 30s linear infinite;
+}
+
+#sumButton {
+    background-color: green;
+    animation-duration: 20s; /* Velocidad diferente */
+}
+
+#subButton {
+    background-color: red;
+    animation-duration: 25s; /* Velocidad diferente */
+}
+
+#mulButton {
+    background-color: violet;
+    animation-duration: 15s; /* Velocidad diferente */
+}
+
+#divButton {
+    background-color: orange;
+    animation-duration: 35s; /* Velocidad diferente */
+}
+
+/* Sección de Videos Hechos por Mí */
 .videos-title {
     animation: slideIn 2s ease-in-out;
+    text-align: center;
+    margin: 20px 0;
 }
 
-.playlists-title {
-    animation: fadeIn 2s ease-in-out;
+.videos-title i {
+    font-style: italic;
 }
 
-.about-music-title {
-    animation: zoomIn 1s ease-in-out;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-
-.fade-in {
-    animation: fadeIn 2s ease-in-out;
+li {
+    margin: 10px 0;
 }
 
-.slide-in {
-    animation: slideIn 2s ease-in-out;
-}
-
-.zoom-in {
-    animation: zoomIn 2s ease-in-out;
-}
-
-
-.rotate {
+img.rotate {
     animation: rotate 46s infinite linear;
 }
 
+/* Sección de Playlists */
+.playlist-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    animation: bounce 2s infinite alternate;
+}
 
+.playlist-btn:hover {
+    background-color: #2c3e50;
+    color: yellow;
+}
+
+/* Movimiento aleatorio de los botones */
+@keyframes moveAround {
+    0% {
+        transform: translate(0vw, 0vh);
+    }
+    10% {
+        transform: translate(70vw, 10vh);
+    }
+    20% {
+        transform: translate(20vw, 30vh);
+    }
+    30% {
+        transform: translate(50vw, 50vh);
+    }
+    40% {
+        transform: translate(10vw, 80vh);
+    }
+    50% {
+        transform: translate(90vw, 40vh);
+    }
+    60% {
+        transform: translate(40vw, 10vh);
+    }
+    70% {
+        transform: translate(60vw, 60vh);
+    }
+    80% {
+        transform: translate(20vw, 70vh);
+    }
+    90% {
+        transform: translate(80vw, 30vh);
+    }
+    100% {
+        transform: translate(0vw, 0vh);
+    }
+}
+
+/* Animaciones para los elementos */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -98,89 +185,11 @@ body {
     }
 }
 
-
-.playlist-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    animation: bounce 2s infinite alternate;
-}
-
-.playlist-btn:hover {
-    background-color: #2c3e50;
-    color: yellow;
-}
-
 @keyframes bounce {
     0% {
         transform: translateY(0);
     }
     100% {
         transform: translateY(-10px);
-    }
-}
-
-
-.floating-link {
-    position: fixed;
-    font-size: 20px;
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    animation: moveAround 30s linear infinite;
-    z-index: 1000; 
-    transition: transform 0.5s ease-in-out;
-}
-
-.floating-link:hover {
-    background-color: #c0392b;
-    transform: translate(
-        calc(100vw * (Math.random() - 0.5)),
-        calc(100vh * (Math.random() - 0.5))
-    ); 
-    cursor: not-allowed; 
-}
-
-
-@keyframes moveAround {
-    0% {
-        transform: translate(0vw, 0vh);
-    }
-    10% {
-        transform: translate(70vw, 10vh);
-    }
-    20% {
-        transform: translate(20vw, 30vh);
-    }
-    30% {
-        transform: translate(50vw, 50vh);
-    }
-    40% {
-        transform: translate(10vw, 80vh);
-    }
-    50% {
-        transform: translate(90vw, 40vh);
-    }
-    60% {
-        transform: translate(40vw, 10vh);
-    }
-    70% {
-        transform: translate(60vw, 60vh);
-    }
-    80% {
-        transform: translate(20vw, 70vh);
-    }
-    90% {
-        transform: translate(80vw, 30vh);
-    }
-    100% {
-        transform: translate(0vw, 0vh);
     }
 }
